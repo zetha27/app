@@ -2,27 +2,33 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <meta name="theme-color" content="#2B6A4C" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#142019" media="(prefers-color-scheme: dark)">
 <title>Mi Galpon</title>
 <link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "appwrite": "https://cdn.jsdelivr.net/npm/appwrite@28.1.0/+esm"
+  }
+}
+</script>
 </head>
 <body>
+<div id="authRoot" aria-live="polite"></div>
 <div class="app">
-  <header class="top"><div class="brand"><div><h1 id="nombre"></h1><p id="fechaHoy"></p></div><span id="syncStatus" class="sync-status" aria-live="polite"></span></div></header>
+  <header class="top"><div class="brand"><div><h1 id="nombre"></h1><p id="fechaHoy"></p></div></div><div id="accountBar" class="account-bar"></div></header>
   <main id="view"></main>
   <div id="fabSlot"></div>
   <nav id="nav" aria-label="Secciones"></nav>
 </div>
 <div id="sheetRoot"></div>
 <div id="toast" role="status" aria-live="polite"></div>
-<div id="reporte"></div>
 
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-<script src="sync.js"></script>
 <script src="script.js"></script>
+<script src="offline-bootstrap.js"></script>
+<script type="module" src="appwrite-client.js"></script>
+<script type="module" src="appwrite-auth.js"></script>
 </body>
 </html>
